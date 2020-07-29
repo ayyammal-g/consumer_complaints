@@ -20,6 +20,7 @@ I break down the problem into two important tasks.
 
 1. To Read the dataset and extract the product, year and company reported in each consumer complaint.
 2. Aggregate the extracted data for each product and year to find
+
         a) total number of complaints
         
         b) number of companies receiving the complaints
