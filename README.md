@@ -33,7 +33,7 @@ Given the input file, load_data() method of ComplaintsDataLoader class will load
 1. All Product names are modified as lower-case
 2. To be case insensitive, All Company names uniformly represented as modied captilized case. 
 
-#* complaints_data_reporter:
+## complaints_data_reporter:
 ComplaintsDataReport class has method set_report to aggregate the extracted data. 
        1. Total complaints - Sum(values of inner dictionary company corresponding to the top level dictionary with the (product,year) key).
        2. Count of companies with atleast 1 complaint - length of company keys corresponding to the top level dictionary with (product,year) key.
@@ -69,7 +69,13 @@ The top-level directory structure for my repo looks like the following:
                 |── output
                     └── report.csv
 
+## Testing:
 
+Unit testing is done with the sample test data. I did this moving the input csv files to the input folder in my local machine and output files in the output folder during Unit Testing. The generated csv output file is tested by opening it Excel worsheet and applying necessary aggregate functions.The sample data given in the TestSuite is also tested for accuracy. 
+
+A lot of testing time spent on the performance testing to decide defaultdict vs dict vs Counter.
+
+Best execution time for the entire code for the modest size dataset of size approx 1 GB given in http://files.consumerfinance.gov/ccdb/complaints.csv.zip is 3 minutes approximately.
 
 
 ## Instructions to Execute the code:
