@@ -47,7 +47,15 @@ ComplaintsDataReport class has method set_report to aggregate the extracted data
  
  ## complaints_analytics:
  This the main python file called from run.sh. It has calls to read, extract and write data through complaints_data_loader and complaints_data_reporter
+ 
+## Unit Testing - unit_test_run:
 
+Unit testing is done by using InsightTestSuite's  input/complaints.csv files and output/report.csv in the output folder. The input file's headers, The extracted data and the output file are all tested in the unit testing.
+
+During development, a lot of testing time spent on the performance testing to decide defaultdict vs dict vs Counter.
+
+For the modest size dataset of size approx 1 GB given in http://files.consumerfinance.gov/ccdb/complaints.csv.zip  took approximately 2 minutes to complete.
+ 
 
 ## Repo directory structure
 The top-level directory structure for my repo looks like the following:
@@ -75,16 +83,13 @@ The top-level directory structure for my repo looks like the following:
 
 ## Testing:
 
-Unit testing is done by moving the input csv files to the input folder in my local machine and output files in the output folder. The generated csv output file is also tested manually by  applying necessary aggregate functions in spreadsheet.The sample input file given in the TestSuite is also tested by changing the input and output file paths in run.sh
 
-During development, a lot of testing time spent on the performance testing to decide defaultdict vs dict vs Counter.
-
-For the modest size dataset of size approx 1 GB given in http://files.consumerfinance.gov/ccdb/complaints.csv.zip  took approximately 3 minutes to complete.
 
 ## Instructions to Execute the code:
 
 1. .\run.sh at the command line will execute the code. 
 2. As per the instructions, it is assumed that input folder will have the complaints.csv during grading. So for now, no file is kept in the input folder. So make sure input file is placed in input folder before running run.sh file.
+3. All imports are made from Python standard library
 
 Email if there any questions at usharajam4u@gmail.com
 
