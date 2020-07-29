@@ -75,21 +75,21 @@ The top-level directory structure for my repo looks like the following:
             |   │   └── complaints.csv
             |   |__ output
             |   │   └── report.csv
-            ├── your-own-test_1
+            ├── test_2
                 ├── input
                 │   └── complaints.csv
                 |── output
                     └── report.csv
 
-## Testing:
-
-
-
 ## Instructions to Execute the code:
 
 1. .\run.sh at the command line will execute the code. 
 2. As per the instructions, it is assumed that input folder will have the complaints.csv during grading. So for now, no file is kept in the input folder. So make sure input file is placed in input folder before running run.sh file.
-3. All imports are made from Python standard library
+
+## Notes:
+
+1. All imports are made from Python standard library
+2. Passed the Test repo link given in the instructions. 
 
 Email if there any questions at usharajam4u@gmail.com
 
