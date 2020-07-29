@@ -30,13 +30,20 @@ I break down the problem into two important tasks.
 The former task is accomplished by ComplaintsDataLoader class in complaints_data_loader.py while the later task is accomplished by ComplaintsDataReport class in complaints_data_reporter.py
 
 ## complaints_data_loader:
-Given the input file, load_data() method of ComplaintsDataLoader class will load the data in the dictionary. For large data sets, the challenge was to find a better data structure to store the data. As there is a need to hash based on Product and Year Dictionary found to be well serve the purpose.
-   After deciding to use dictionaries, I checked the performances of standard dict, defaultdict and Counter from collections for dealing with the sample data set.
-   defaultdict performed better and so I choose choosing defaultdict. The input file is transformed into nested dictionary as,
-                    {(Product, Year) : {Company1 : no_of_complaints,...}}
-1. All Product names are modified as lower-case
-2. To be case insensitive, All Company names uniformly represented as modied captilized case. 
+Given the input file, load_data() method of ComplaintsDataLoader class will load the data in the dictionary. Using str functions and datetime methods the input data is processed to store the data in desired form.
 
+1. Product names are modified as lower-case.
+2. Company names are uniformly represented as captilized case, to make it case insensitive.
+3. Year is extracted from Date Received column using datetime.
+
+For large data sets, the challenge was to find a better data structure to store the data. As there is a need to hash based on Product and Year, I chose dictionary data structure as this well serve the purpose.
+
+After deciding to use dictionaries, I checked the performances of standard dict, defaultdict and Counter from collections for dealing with the sample data set. For a sample data set of 100K+ rows that are processed into 100+ size dictionary entries, defaultdict gave a faster turnaround time than the other two. So I chose defaultdict. Thus the input file is transformed into nested default dictionary as,
+
+                                                {(Product, Year) : {Company1 : no_of_complaints for Company1,...}}
+        where the tuple (Product, Year) represents key, Whose value is a default dictionary with Company name as Key and occurances of that company complaints as Value
+                
+         
 ## complaints_data_reporter:
 ComplaintsDataReport class has method set_report to aggregate the extracted data. 
        1. Total complaints - Sum(values of inner dictionary company corresponding to the top level dictionary with the (product,year) key).
@@ -63,7 +70,10 @@ The top-level directory structure for my repo looks like the following:
     ├── README.md
     ├── run.sh
     ├── src
-    │   └── consumer_complaints.py
+    │   └── complaints_analytics.py
+        └── complaints_data_loader.py
+        └── complaints_data_reporter.py
+        └── unit_test_run.py
     ├── input
     │   └── complaints.csv
     ├── output
@@ -75,11 +85,13 @@ The top-level directory structure for my repo looks like the following:
             |   │   └── complaints.csv
             |   |__ output
             |   │   └── report.csv
-            ├── test_2
+            ├── test_2 
                 ├── input
-                │   └── complaints.csv
+                │   └── complaints.csv 
                 |── output
-                    └── report.csv
+                    └── report.csv 
+     
+     Update:insight_testsuite--->test2: Not present - Could not push the sample 1 GB data set  used for testing as Github does not allow files larger than 100KB
 
 ## Instructions to Execute the code:
 
