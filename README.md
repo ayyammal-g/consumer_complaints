@@ -71,12 +71,11 @@ The top-level directory structure for my repo looks like the following:
 
 ## Testing:
 
-Unit testing is done with the sample test data. I did this moving the input csv files to the input folder in my local machine and output files in the output folder during Unit Testing. The generated csv output file is tested by opening it Excel worsheet and applying necessary aggregate functions.The sample data given in the TestSuite is also tested for accuracy. 
+Unit testing is done by moving the input csv files to the input folder in my local machine and output files in the output folder. The generated csv output file is also tested manually by  applying necessary aggregate functions in spreadsheet.The sample input file given in the TestSuite is also tested by changing the input and output file paths in run.sh
 
-A lot of testing time spent on the performance testing to decide defaultdict vs dict vs Counter.
+During development, a lot of testing time spent on the performance testing to decide defaultdict vs dict vs Counter.
 
-Best execution time for the entire code for the modest size dataset of size approx 1 GB given in http://files.consumerfinance.gov/ccdb/complaints.csv.zip is 3 minutes approximately.
-
+For the modest size dataset of size approx 1 GB given in http://files.consumerfinance.gov/ccdb/complaints.csv.zip  took approximately 3 minutes to complete.
 
 ## Instructions to Execute the code:
 
