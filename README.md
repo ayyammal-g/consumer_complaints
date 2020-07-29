@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [Problem](README.md#problem)
-1. [Hacking the Problem](README.md#hacking-the-problem)
+1. [Hacking the Challenge](README.md#hacking-the-problem)
 1. [Instructions](README.md#instructions)
 1. [Repo directory structure](README.md#repo-directory-structure)
 1. [Testing your code](README.md#testing-your-code)
