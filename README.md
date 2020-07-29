@@ -20,10 +20,11 @@ I break down the problem into two important tasks.
 
 1. To Read the dataset and extract the product, year and company reported in each consumer complaint.
 2. Aggregate the extracted data for each product and year to find
-        * total number of complaints
-        * number of companies receiving the complaints
-        * Highest percentage of complaints directed against a single company
-The former task is accomplished by ComplaintsDataLoader class in complaints_data_loader.py while the later task is accomplished by ComplaintsDataReport class in complaints_data_report.py
+        *total number of complaints
+        *number of companies receiving the complaints
+        *Highest percentage of complaints directed against a single company
+        
+The former task is accomplished by ComplaintsDataLoader class in complaints_data_loader.py while the later task is accomplished by ComplaintsDataReport class in complaints_data_reporter.py
 
 ## complaints_data_loader:
 Given the input file, load_data() method of ComplaintsDataLoader class will load the data in the dictionary. For large data sets, the challenge was to find a better data structure to store the data. As there is a need to hash based on Product and Year Dictionary found to be well serve the purpose.
