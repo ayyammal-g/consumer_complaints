@@ -20,9 +20,9 @@ I break down the problem into two important tasks.
 
 1. To Read the dataset and extract the product, year and company reported in each consumer complaint.
 2. Aggregate the extracted data for each product and year to find
-        *total number of complaints
-        *number of companies receiving the complaints
-        *Highest percentage of complaints directed against a single company
+        a) total number of complaints
+        b) number of companies receiving the complaints
+        c) Highest percentage of complaints directed against a single company
         
 The former task is accomplished by ComplaintsDataLoader class in complaints_data_loader.py while the later task is accomplished by ComplaintsDataReport class in complaints_data_reporter.py
 
