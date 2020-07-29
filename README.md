@@ -2,7 +2,7 @@
 
 ## Table of Contents
 1. [Problem](README.md#problem)
-1. [Steps to submit your solution](README.md#steps-to-submit-your-solution)
+1. [Hacking the Problem](README.md#hacking-the-problem)
 1. [Input Dataset](README.md#input-dataset)
 1. [Expected output](README.md#expected-output)
 1. [Instructions](README.md#instructions)
@@ -16,7 +16,28 @@ The federal government provides a way for consumers to file complaints against c
 
 **For this challenge, we want to know for each financial product and year, the total number of complaints, number of companies receiving a complaint, and the highest percentage of complaints directed at a single company.
 
-## Steps to submit your solution
+## Hacking the challenge
+
+To solve this challenge, I break down the problem into two important tasks.
+
+1. To Read the dataset and extract the product, year and company reported in each consumer complaint.
+2. Aggregate the extracted data for each product and year to find
+        * total number of complaints
+        * number of companies receiving the complaints
+        * Highest percentage of complaints directed against a single company
+The former task is accomplished by ComplaintsDataLoader class in complaints_data_loader.py while the later task is accomplished by ComplaintsDataReport class in complaints_data_report.py
+
+complaints_data_loader:
+   Given the input file, load_data() method of ComplaintsDataLoader class will load the data in the dictionary. For large data sets, the challenge was to find a better data structure to store the data. As there is a need to hash based on Product and Year Dictionary found to be well serve the purpose.
+   After deciding to use dictionaries, I checked the performances of standard dict, defaultdict and Counter from collections for dealing with the sample data set.
+   defaultdict performed better and so I choose choosing defaultdict. The input file is transformed into dictionary as,
+                    {Product, Year} = {Company1 : no_of_complaints,...}
+
+complaints_data_reporter:
+   ComplaintsDataReport class has method set_report to aggregate the extracted data. Once the report data is set, a call to write_data method writes the data to the output file.
+
+
+
 
 * To submit your entry, use the link you received in your coding challenge invite email
 * Do NOT attach a file - we will not accept solutions with attached files
