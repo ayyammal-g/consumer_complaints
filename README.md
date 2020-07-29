@@ -46,6 +46,7 @@ After deciding to use dictionaries, I checked the performances of standard dict,
          
 ## complaints_data_reporter:
 ComplaintsDataReport class has method set_report to aggregate the extracted data. 
+
        1. Total complaints - Sum(values of inner dictionary company corresponding to the top level dictionary with the (product,year) key).
        2. Count of companies with atleast 1 complaint - length of company keys corresponding to the top level dictionary with (product,year) key.
        3. Highest Percentage of complaints against a company - max(complaints for a company) /Total complaints * 100 for each (product,year) key.
@@ -61,7 +62,7 @@ Unit testing is done by using InsightTestSuite's  input/complaints.csv files and
 
 During development, a lot of testing time spent on the performance testing to decide defaultdict vs dict vs Counter.
 
-For the modest size dataset of size approx 1 GB given in http://files.consumerfinance.gov/ccdb/complaints.csv.zip  took approximately 2 minutes to complete.
+For the modest size dataset of size approx 1 GB given in http://files.consumerfinance.gov/ccdb/complaints.csv.zip  took approximately 2 minutes to complete. This my test_2 folder input data which could not be pushed in repositrary because of its size.
  
 
 ## Repo directory structure
@@ -91,7 +92,7 @@ The top-level directory structure for my repo looks like the following:
                 |── output
                     └── report.csv 
      
-     Update:insight_testsuite--->test2: Not present - Could not push the sample 1 GB data set  used for testing as Github does not allow files larger than 100KB
+     Update:insight_testsuite--->test2: Not present - Could not push the sample 1 GB data set used for testing to the repositary as Github does not allow files larger than 100KB
 
 ## Instructions to Execute the code:
 
