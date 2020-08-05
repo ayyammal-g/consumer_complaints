@@ -1,0 +1,26 @@
+create table complaints(Date_received	DATE,
+                            Product	varchar(255),
+                            Sub_product	varchar(255),
+                            Issue		varchar(255),
+                            Sub_issue	varchar(255),	
+                            Consumer_complaint_narrative 	varchar(255),	
+                            Company_public_response		varchar(255),
+                            Company		varchar(255),
+                            State		varchar(255),
+                            ZIPcode		varchar(255),
+                            Tags		varchar(255),
+                            Consumer_consent_provided	varchar(255),
+                            Submitted_via	varchar(255),
+                            Date_sent_to_company	DATE,
+                            Company_response_to_consumer		varchar(255),
+                            Timely_response	varchar(255),	
+                            Consumer_disputed		varchar(255),
+                            ComplaintID	varchar(255));
+
+
+insert into complaints (date_received, product, company) values
+("2019-09-24", "Debt collection","TRANSWORLD SYSTEMS INC"),
+("2019-09-19","Credit reporting, credit repair services, or other personal consumer reports","Experian Information Solutions Inc.,"),
+("2020-01-06","Credit reporting, credit repair services, or other personal consumer reports","Experian Information Solutions Inc.,"),
+("2019-10-24","Credit reporting, credit repair services, or other personal consumer reports","TRANSUNION INTERMEDIATE HOLDINGS, INC."),
+("2019-11-20","Credit reporting, credit repair services, or other personal consumer reports","TRANSUNION INTERMEDIATE HOLDINGS, INC.");

@@ -1,0 +1,8 @@
+select 
+  product_, 
+  comp_year as year, 
+  count(company_) as Total_Complaints,
+  max(complaints_per_co) as Highest_per_Company, 
+  round(max(complaints_per_co)/sum(complaints_per_co) *100) as Percentage from  
+
+  (select lower(product) as product_, year(date_received) as comp_year, lower(company) as company_, count(company) as complaints_per_co from sam_complaints group by product_, comp_year, company_)as T group by product_,comp_year;
